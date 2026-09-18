@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #050816;
+    --bg-surface: #0a1128;
+    --bg-surface-elevated: #111b3d;
+    --neon-blue: #00C8FF;
+    --neon-cyan: #00F0FF;
+    --neon-purple: #8B5CF6;
+    --neon-magenta: #FF3CAC;
+    --neon-green: #25D366;
+    --neon-orange: #FF7B00;
+    --neon-yellow: #FFDE59;
+    --text-primary: #FFFFFF;
+    --text-muted: #AAB3C5;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-tamil {
+    font-family: 'Noto Sans Tamil', 'Inter', sans-serif;
+  }
+
+  .font-neon-script {
+    font-family: 'Pacifico', cursive;
+  }
+}
+
+/* Custom Glow & Neon Utilities */
+.neon-glow-cyan {
+  text-shadow: 0 0 7px #00F0FF, 0 0 15px #00F0FF, 0 0 30px rgba(0, 240, 255, 0.6);
+}
+
+.neon-glow-blue {
+  text-shadow: 0 0 7px #00C8FF, 0 0 15px #00C8FF, 0 0 30px rgba(0, 200, 255, 0.6);
+}
+
+.neon-glow-pink {
+  text-shadow: 0 0 7px #FF3CAC, 0 0 15px #FF3CAC, 0 0 30px rgba(255, 60, 172, 0.6);
+}
+
+.neon-glow-purple {
+  text-shadow: 0 0 7px #8B5CF6, 0 0 15px #8B5CF6, 0 0 30px rgba(139, 92, 246, 0.6);
+}
+
+.neon-glow-green {
+  text-shadow: 0 0 7px #25D366, 0 0 15px #25D366, 0 0 30px rgba(37, 211, 102, 0.6);
+}
+
+.neon-glow-warm {
+  text-shadow: 0 0 7px #FFDE59, 0 0 15px #FF7B00, 0 0 30px rgba(255, 123, 0, 0.6);
+}
+
+.neon-box-cyan {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.15);
+}
+
+.neon-box-pink {
+  box-shadow: 0 0 15px rgba(255, 60, 172, 0.25), inset 0 0 15px rgba(255, 60, 172, 0.15);
+}
+
+.neon-box-purple {
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.25), inset 0 0 15px rgba(139, 92, 246, 0.15);
+}
+
+/* Glassmorphic styles */
+.glass-panel {
+  background: rgba(10, 17, 40, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 240, 255, 0.12);
+}
+
+.glass-panel-elevated {
+  background: rgba(17, 27, 61, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+::-webkit-scrollbar-thumb {
+  background: #111b3d;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00F0FF;
+}
+
+/* Subtle Animated Neon Line */
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 6px #00F0FF);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 14px #00F0FF);
+  }
+}
+
+.animate-neon-pulse {
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+/* Light Particle Float */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-15px) translateX(8px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 4s linear infinite;
+}
+
+/* Draggable before/after slider styles */
+.slider-handle-glow {
+  box-shadow: 0 0 15px #00F0FF, 0 0 30px rgba(0, 240, 255, 0.8);
+}
